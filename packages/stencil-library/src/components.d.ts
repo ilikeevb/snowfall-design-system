@@ -15,7 +15,7 @@ export namespace Components {
           * Вариант размера элемента
           * @default 'medium'
          */
-        "size": IconSize;
+        "size": number | 'xsmall' | 'small' | 'medium' | 'large';
     }
 }
 declare global {
@@ -39,7 +39,7 @@ declare namespace LocalJSX {
           * Вариант размера элемента
           * @default 'medium'
          */
-        "size"?: IconSize;
+        "size"?: number | 'xsmall' | 'small' | 'medium' | 'large';
     }
     interface IntrinsicElements {
         "snowfall-icon": SnowfallIcon;

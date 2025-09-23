@@ -1,7 +1,5 @@
 import { Component, Prop, getAssetPath, h } from '@stencil/core';
 
-type IconSize = number | 'xsmall' | 'small' | 'medium' | 'large';
-
 @Component({
   tag: 'snowfall-icon',
   styleUrl: 'snowfall-icon.css',
@@ -13,7 +11,7 @@ export class SnowfallIcon {
   @Prop() name!: string;
 
   /** Вариант размера элемента */
-  @Prop() size: IconSize = 'medium';
+  @Prop() size: number | 'xsmall' | 'small' | 'medium' | 'large' = 'medium';
 
   private get href() {
     return getAssetPath(`./icons/${this.name}.svg#path`);
