@@ -1,0 +1,29 @@
+:host {
+  display: inline-block;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.icon--xsmall {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--small {
+  width: 20px;
+  height: 20px;
+}
+
+.icon--medium {
+  width: 24px;
+  height: 24px;
+}
+
+.icon--large {
+  width: 32px;
+  height: 32px;
+}
