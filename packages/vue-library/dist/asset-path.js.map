@@ -1,1 +1,0 @@
-{"version":3,"file":"asset-path.js","sourceRoot":"","sources":["../lib/asset-path.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,0CAA0C,CAAA;AAEvE,MAAM,aAAa,GAAG,IAAI,GAAG,CAAC,0CAA0C,EAAE,MAAM,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC,IAAI,CAAA;AAE/F,MAAM,CAAC,MAAM,wBAAwB,GAAG,GAAG,EAAE,CAAC,YAAY,CAAC,aAAa,CAAC,CAAA"}
