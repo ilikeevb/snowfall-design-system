@@ -1,6 +1,6 @@
-import { ensureComponentAssetPath } from './asset-path';
+import { setAssetPath } from 'stencil-library/dist/components/index.js';
 
-ensureComponentAssetPath();
+setAssetPath(new URL('../../stencil-library/dist/stencil-library/dist/', import.meta.url).href);
 
-export * from './components';
-export * from './plugin';
+export * from "./stencil-generated/components"
+export * from "./plugin"

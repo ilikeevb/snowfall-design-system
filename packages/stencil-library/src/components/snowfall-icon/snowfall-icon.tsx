@@ -16,10 +16,14 @@ export class SnowfallIcon {
   @State() private href?: string;
 
   private setIconHref = () => {
+    if (!this.name) {
+      return;
+    }
+
     try {
       this.href = getAssetPath(`./icons/${this.name}.svg#path`);
-    } catch {
-      console.error(`Иконка ${this.name} не найдена!`);
+    } catch (error) {
+      console.error(error);
       this.href = undefined;
     }
   };

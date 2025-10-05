@@ -23,7 +23,8 @@ export const config: Config = {
     },
     vueOutputTarget({
       componentCorePackage: 'stencil-library',
-      proxiesFile: '../vue-library/lib/components.ts',
+      proxiesFile: '../vue-library/lib/stencil-generated/components.ts',
+      includePolyfills: false,
     }),
     reactOutputTarget({
       // Relative path to where the React components will be generated
