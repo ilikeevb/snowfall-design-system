@@ -6,9 +6,10 @@ import {
 } from "stencil-library/loader"
 import { applyStencilAssetPath } from "./asset-path"
 
+applyStencilAssetPath()
+
 export const ComponentLibrary: Plugin = {
-  async install() {
-    applyStencilAssetPath()
+  install() {
     defineCustomElements()
   },
 }
