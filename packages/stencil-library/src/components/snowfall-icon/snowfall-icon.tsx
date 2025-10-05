@@ -1,4 +1,4 @@
-import { Component, Prop, getAssetPath, h } from '@stencil/core';
+import { Component, Prop, State, Watch, getAssetPath, h } from '@stencil/core';
 
 @Component({
   tag: 'snowfall-icon',
@@ -13,8 +13,24 @@ export class SnowfallIcon {
   /** Вариант размера элемента */
   @Prop() size: number | 'xsmall' | 'small' | 'medium' | 'large' = 'medium';
 
-  private get href() {
-    return getAssetPath(`./icons/${this.name}.svg#path`);
+  @State() private href?: string;
+
+  private setIconHref = () => {
+    try {
+      this.href = getAssetPath(`./icons/${this.name}.svg#path`);
+    } catch {
+      console.error(`Иконка ${this.name} не найдена!`);
+      this.href = undefined;
+    }
+  };
+
+  componentWillLoad() {
+    return this.setIconHref();
+  }
+
+  @Watch('name')
+  protected handleNameChange() {
+    return this.setIconHref();
   }
 
   render() {
@@ -25,7 +41,7 @@ export class SnowfallIcon {
         viewBox="0 0 24 24"
         fill="currentColor"
         class={{
-          "icon": true,
+          icon: true,
           [`icon--${this.size}`]: !isNumericSize,
         }}
         style={{
