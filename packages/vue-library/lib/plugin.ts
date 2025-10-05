@@ -4,9 +4,11 @@ import type { Plugin } from "vue"
 import {
   defineCustomElements,
 } from "stencil-library/loader"
+import { applyStencilAssetPath } from "./asset-path"
 
 export const ComponentLibrary: Plugin = {
   async install() {
+    applyStencilAssetPath()
     defineCustomElements()
   },
 }
