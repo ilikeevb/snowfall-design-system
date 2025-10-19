@@ -6,50 +6,50 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface SnowfallIcon {
+    interface SnowfallButton {
+        "label": string;
         /**
-          * Название иконки
-         */
-        "name": string;
-        /**
-          * Вариант размера элемента
           * @default 'medium'
          */
-        "size": number | 'xsmall' | 'small' | 'medium' | 'large';
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * @default 'primary'
+         */
+        "theme": 'primary' | 'secondary';
     }
 }
 declare global {
-    interface HTMLSnowfallIconElement extends Components.SnowfallIcon, HTMLStencilElement {
+    interface HTMLSnowfallButtonElement extends Components.SnowfallButton, HTMLStencilElement {
     }
-    var HTMLSnowfallIconElement: {
-        prototype: HTMLSnowfallIconElement;
-        new (): HTMLSnowfallIconElement;
+    var HTMLSnowfallButtonElement: {
+        prototype: HTMLSnowfallButtonElement;
+        new (): HTMLSnowfallButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "snowfall-icon": HTMLSnowfallIconElement;
+        "snowfall-button": HTMLSnowfallButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface SnowfallIcon {
+    interface SnowfallButton {
+        "label": string;
         /**
-          * Название иконки
-         */
-        "name": string;
-        /**
-          * Вариант размера элемента
           * @default 'medium'
          */
-        "size"?: number | 'xsmall' | 'small' | 'medium' | 'large';
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * @default 'primary'
+         */
+        "theme"?: 'primary' | 'secondary';
     }
     interface IntrinsicElements {
-        "snowfall-icon": SnowfallIcon;
+        "snowfall-button": SnowfallButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "snowfall-icon": LocalJSX.SnowfallIcon & JSXBase.HTMLAttributes<HTMLSnowfallIconElement>;
+            "snowfall-button": LocalJSX.SnowfallButton & JSXBase.HTMLAttributes<HTMLSnowfallButtonElement>;
         }
     }
 }

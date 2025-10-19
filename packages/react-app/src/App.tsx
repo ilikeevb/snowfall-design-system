@@ -1,10 +1,19 @@
-import './App.css';
-import { SnowfallIcon } from 'react-library';
+import "./App.css";
+import { SnowfallButton } from "react-library";
 
 function App() {
   return (
     <div className="App">
-      <SnowfallIcon name="fish" size={64} />
+      <div className="buttons">
+        <SnowfallButton theme="primary" size="small" label="Click Me" />
+        <SnowfallButton theme="primary" size="medium" label="Click Me" />
+        <SnowfallButton theme="primary" size="large" label="Click Me" />
+      </div>
+      <div className="buttons">
+        <SnowfallButton theme="secondary" size="small" label="Click Me" />
+        <SnowfallButton theme="secondary" size="medium" label="Click Me" />
+        <SnowfallButton theme="secondary" size="large" label="Click Me" />
+      </div>
     </div>
   );
 }
