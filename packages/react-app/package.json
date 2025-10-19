@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "sync:icons": "node ./scripts/sync-icons.mjs",
+    "predev": "npm run sync:icons",
     "dev": "vite",
+    "prebuild": "npm run sync:icons",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
