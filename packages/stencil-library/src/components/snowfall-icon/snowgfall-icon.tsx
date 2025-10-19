@@ -4,6 +4,7 @@ import { Component, Prop, h } from '@stencil/core';
   tag: 'snowfall-icon',
   styleUrl: 'snowfall-icon.css',
   shadow: true,
+  assetsDirs: ['icons'],
 })
 export class SnowfallIcon {
   /** Название иконки */
@@ -13,7 +14,7 @@ export class SnowfallIcon {
   @Prop() size: number | 'small' | 'medium' | 'large' = 'medium';
 
   private get href() {
-    return `./assets/icons/${this.name}.svg#path`;
+    return `./icons/${this.name}.svg#path`;
   }
 
   render() {
