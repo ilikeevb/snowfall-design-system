@@ -1,5 +1,5 @@
 import "./App.css";
-import { SnowfallButton } from "react-library";
+import { SnowfallButton, SnowfallIcon } from "react-library";
 
 function App() {
   return (
@@ -13,6 +13,9 @@ function App() {
         <SnowfallButton theme="secondary" size="small" label="Click Me" />
         <SnowfallButton theme="secondary" size="medium" label="Click Me" />
         <SnowfallButton theme="secondary" size="large" label="Click Me" />
+      </div>
+      <div className="icons">
+        <SnowfallIcon name="fish" />
       </div>
     </div>
   );

@@ -17,6 +17,17 @@ export namespace Components {
          */
         "theme": 'primary' | 'secondary';
     }
+    interface SnowfallIcon {
+        /**
+          * Название иконки
+         */
+        "name"?: string;
+        /**
+          * Вариант размера элемента
+          * @default 'medium'
+         */
+        "size": number | 'small' | 'medium' | 'large';
+    }
 }
 declare global {
     interface HTMLSnowfallButtonElement extends Components.SnowfallButton, HTMLStencilElement {
@@ -25,8 +36,15 @@ declare global {
         prototype: HTMLSnowfallButtonElement;
         new (): HTMLSnowfallButtonElement;
     };
+    interface HTMLSnowfallIconElement extends Components.SnowfallIcon, HTMLStencilElement {
+    }
+    var HTMLSnowfallIconElement: {
+        prototype: HTMLSnowfallIconElement;
+        new (): HTMLSnowfallIconElement;
+    };
     interface HTMLElementTagNameMap {
         "snowfall-button": HTMLSnowfallButtonElement;
+        "snowfall-icon": HTMLSnowfallIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -41,8 +59,20 @@ declare namespace LocalJSX {
          */
         "theme"?: 'primary' | 'secondary';
     }
+    interface SnowfallIcon {
+        /**
+          * Название иконки
+         */
+        "name"?: string;
+        /**
+          * Вариант размера элемента
+          * @default 'medium'
+         */
+        "size"?: number | 'small' | 'medium' | 'large';
+    }
     interface IntrinsicElements {
         "snowfall-button": SnowfallButton;
+        "snowfall-icon": SnowfallIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -50,6 +80,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "snowfall-button": LocalJSX.SnowfallButton & JSXBase.HTMLAttributes<HTMLSnowfallButtonElement>;
+            "snowfall-icon": LocalJSX.SnowfallIcon & JSXBase.HTMLAttributes<HTMLSnowfallIconElement>;
         }
     }
 }

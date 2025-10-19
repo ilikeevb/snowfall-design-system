@@ -11,6 +11,7 @@ import type { StencilReactComponent } from '@stencil/react-output-target/runtime
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';
 import { SnowfallButton as SnowfallButtonElement, defineCustomElement as defineSnowfallButton } from "stencil-library/dist/components/snowfall-button.js";
+import { SnowfallIcon as SnowfallIconElement, defineCustomElement as defineSnowfallIcon } from "stencil-library/dist/components/snowfall-icon.js";
 
 export type SnowfallButtonEvents = NonNullable<unknown>;
 
@@ -21,4 +22,15 @@ export const SnowfallButton: StencilReactComponent<SnowfallButtonElement, Snowfa
     react: React,
     events: {} as SnowfallButtonEvents,
     defineCustomElement: defineSnowfallButton
+});
+
+export type SnowfallIconEvents = NonNullable<unknown>;
+
+export const SnowfallIcon: StencilReactComponent<SnowfallIconElement, SnowfallIconEvents> = /*@__PURE__*/ createComponent<SnowfallIconElement, SnowfallIconEvents>({
+    tagName: 'snowfall-icon',
+    elementClass: SnowfallIconElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as SnowfallIconEvents,
+    defineCustomElement: defineSnowfallIcon
 });
