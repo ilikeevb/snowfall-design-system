@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, getAssetPath } from '@stencil/core';
 
 @Component({
   tag: 'snowfall-icon',
@@ -13,7 +13,15 @@ export class SnowfallIcon {
   @Prop() size: number | 'small' | 'medium' | 'large' = 'medium';
 
   private get href() {
-    return `./assets/icons/${this.name}.svg#path`;
+    const iconName = this.name?.trim();
+
+    if (!iconName) {
+      return undefined;
+    }
+
+    const iconPath = getAssetPath(`./assets/icons/${iconName}.svg`);
+
+    return `${iconPath}#path`;
   }
 
   render() {
@@ -32,7 +40,7 @@ export class SnowfallIcon {
           height: isNumericSize ? `${this.size}px` : '',
         }}
       >
-        <use href={this.href} xlinkHref={this.href}></use>
+        {this.href ? <use href={this.href} xlinkHref={this.href}></use> : null}
       </svg>
     );
   }
